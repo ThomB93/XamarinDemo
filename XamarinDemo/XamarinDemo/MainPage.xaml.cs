@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace XamarinDemo
 {
@@ -16,6 +17,33 @@ namespace XamarinDemo
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void buttonStart_Clicked(object sender, EventArgs e)
+        {
+            if (Accelerometer.IsMonitoring)
+                return;
+
+            //sub to event
+            Accelerometer.ReadingChanged += Accelerometer_ReadingChanged;
+            Accelerometer.Start(SensorSpeed.UI);
+        }
+
+        private void Accelerometer_ReadingChanged(object sender, AccelerometerChangedEventArgs e)
+        {
+            LabelX.Text = "X = " + e.Reading.Acceleration.X.ToString();
+            LabelY.Text = "Y = " + e.Reading.Acceleration.Y.ToString();
+            LabelZ.Text = "Z = " + e.Reading.Acceleration.Z.ToString();
+        }
+
+        private void buttonStop_Clicked(object sender, EventArgs e)
+        {
+            if (!Accelerometer.IsMonitoring)
+                return;
+
+            //unsub from event
+            Accelerometer.ReadingChanged -= Accelerometer_ReadingChanged;
+            Accelerometer.Stop();
         }
     }
 }

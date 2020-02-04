@@ -8,9 +8,18 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
+        <Label x:Name="LabelX" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" />
+        <Label x:Name="LabelY" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" />
+        <Label x:Name="LabelZ" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" />
+        <Button Text="Start" x:Name="buttonStart" Clicked="buttonStart_Clicked" FontAttributes="Bold" Visual="Default" BackgroundColor="#2EF513"></Button>
+        <Button Text="Stop" x:Name="buttonStop" Clicked="buttonStop_Clicked" FontAttributes="Bold" BackgroundColor="#DC1717"></Button>
+
     </StackLayout>
 
 </ContentPage>
