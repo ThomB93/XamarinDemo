@@ -19,7 +19,6 @@
            VerticalOptions="CenterAndExpand" FontAttributes="Bold" FontSize="Large" />
         <Button Text="Start" x:Name="buttonStart" Clicked="buttonStart_Clicked" FontAttributes="Bold" Visual="Default" BackgroundColor="#2EF513"></Button>
         <Button Text="Stop" x:Name="buttonStop" Clicked="buttonStop_Clicked" FontAttributes="Bold" BackgroundColor="#DC1717"></Button>
-
     </StackLayout>
 
 </ContentPage>
